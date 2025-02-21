@@ -1,13 +1,17 @@
 import AuthLayout from "@/pages/auth";
 import { LoginForm } from "@/pages/auth/components/login-form";
 import { SignUpForm } from "@/pages/auth/components/sign-up-form";
+import { NewCandidateForm } from "@/pages/candidates/new-candidate";
+import DashboardPage from "@/pages/dashboard";
 import { Route, Routes } from "react-router";
 
 export default function Router() {
   return (
     <Routes>
-      <Route index element={<h1>home</h1>} />
-      <Route path="about" element={<>about</>} />
+      <Route path="dashboard" element={<DashboardPage />}>
+        <Route path="new-candidate" element={<NewCandidateForm />} />
+        <Route path="all-candidates" element={<>one</>} />
+      </Route>
 
       {/* <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<>register</>} /> */}
